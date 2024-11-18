@@ -1,9 +1,9 @@
 const buttonSubmit = document.getElementById("submitUser")
 const buttonUsers = document.getElementById("getUsers")
 const userList = document.getElementById("users")
+const userForm = document.getElementById("userForm")
 
-buttonSubmit.addEventListener("click", (event) => {
-    event.preventDefault();
+userForm.addEventListener("submit", (event) => {
     const data = {
         "name": document.getElementById("name").value,
         "email": document.getElementById("email").value
