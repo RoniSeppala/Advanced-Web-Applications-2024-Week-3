@@ -11,7 +11,7 @@ buttonSubmit.addEventListener("click", (event) => {
 
     console.log(data)
 
-    fetch("http://localhost:3000/users", {
+    fetch("http://localhost:3000/postUser", {
         method: "post",
         headers: {
             "Content-type": "application/json"

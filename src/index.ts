@@ -44,7 +44,7 @@ router.post("/sum", (req: Request, res: Response) => {
     }
 })
 
-router.post("/users", (req: Request, res: Response) => {
+router.post("/postUser", (req: Request, res: Response) => {
     const {name, email} = req.body
     const newUser: TUser = {name, email};
     users.push(newUser)
