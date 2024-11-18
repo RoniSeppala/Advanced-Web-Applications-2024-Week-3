@@ -1,6 +1,8 @@
-const button = document.getElementById("submitUser")
+const buttonSubmit = document.getElementById("submitUser")
+const buttonUsers = document.getElementById("getUsers")
+const userList = document.getElementById("users")
 
-button.addEventListener("click", (event) => {
+buttonSubmit.addEventListener("click", (event) => {
     console.log("button pressed")
     event.preventDefault()
     const data = {
@@ -17,4 +19,18 @@ button.addEventListener("click", (event) => {
         },
         body: JSON.stringify(data)
     }).then((response) => {console.log(response)})
+})
+
+buttonUsers.addEventListener("click", (event) => {
+    let data;
+    fetch("http://localhost:3000/users").then((response) => response.json()).then((data) => {
+        console.log(data)
+        for (let index = 0; index < data.length; index++) {
+            const {name, email} = data[index];
+            console.log({name, email})
+            const li = document.createElement("li")
+            li.textContent = `Name: ${name}, Email: ${email}`
+            userList.append(li)
+        }
+    })
 })
