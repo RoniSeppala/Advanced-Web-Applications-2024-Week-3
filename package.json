@@ -1,0 +1,19 @@
+{
+  "name": "advanced-web-applications-2024-week-3",
+  "version": "1.0.0",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc-watch --onSuccess \"nodemon dist/app.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "tsc-watch": "^6.2.1"
+  }
+}
