@@ -19,4 +19,18 @@ router.get("/echo/:id", (req, res) => {
         console.log(`Error parsing JSON: ${error}`);
     }
 });
+router.post("/sum", (req, res) => {
+    let numbers = req.body.numbers;
+    let sum = 0;
+    for (let index = 0; index < numbers.length; index++) {
+        const element = numbers[index];
+        sum = sum + element;
+    }
+    try {
+        res.json({ "sum": sum });
+    }
+    catch (error) {
+        console.log(`Error parsin JSON: ${error}`);
+    }
+});
 exports.default = router;
