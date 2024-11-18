@@ -18,7 +18,9 @@ buttonSubmit.addEventListener("click", (event) => {
             "Content-type": "application/json"
         },
         body: JSON.stringify(data)
-    }).then((response) => {console.log(response)})
+    }).then((response) => response.json()).then((data) => {
+        console.log(data)
+    })
 })
 
 buttonUsers.addEventListener("click", (event) => {
