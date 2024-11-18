@@ -38,7 +38,7 @@ router.post("/users", (req, res) => {
     const { name, email } = req.body;
     const newUser = { name, email };
     users.push(newUser);
-    res.status(201).json("User successfully added");
+    res.json("User successfully added");
 });
 router.get("/users", (req, res) => {
     console.log(users);
