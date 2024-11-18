@@ -25,8 +25,8 @@ buttonUsers.addEventListener("click", (event) => {
     userList.innerHTML = ""
     let data;
     fetch("http://localhost:3000/users").then((response) => response.json()).then((data) => {
-        for (let index = 0; index < data.length; index++) {
-            const {name, email} = data[index];
+        for (let index = 0; index < data.users.length; index++) {
+            const {name, email} = data.users[index];
             console.log({name, email})
             const li = document.createElement("li")
             li.textContent = `${name} - ${email}`
