@@ -4,7 +4,6 @@ const userList = document.getElementById("users")
 
 buttonSubmit.addEventListener("click", (event) => {
     console.log("button pressed")
-    event.preventDefault()
     const data = {
         "name": document.getElementById("name").value,
         "email": document.getElementById("email").value
