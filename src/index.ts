@@ -1,4 +1,14 @@
 import {Router, Request, Response} from "express"
+import path from "path"
+import fs from "fs"
+
+type TUser = {
+    name: string;
+    email: string;
+}
+
+let users: TUser[] = [];
+
 
 const router: Router = Router()
 
@@ -33,4 +43,18 @@ router.post("/sum", (req: Request, res: Response) => {
         console.log(`Error parsin JSON: ${error}`)
     }
 })
+
+router.post("/users", (req: Request, res: Response) => {
+    const {name, email} = req.body
+    const newUser: TUser = {name, email};
+    users.push(newUser)
+    res.json("User successfully added")
+    console.log(newUser)
+})
+
+router.get("/users", (req: Request, res: Response) => {
+    console.log(users)
+    res.json(users)
+})
+
 export default router

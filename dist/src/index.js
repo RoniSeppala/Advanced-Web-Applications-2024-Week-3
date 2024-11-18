@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+let users = [];
 const router = (0, express_1.Router)();
 router.get("/hello", (req, res) => {
     try {
@@ -32,5 +33,16 @@ router.post("/sum", (req, res) => {
     catch (error) {
         console.log(`Error parsin JSON: ${error}`);
     }
+});
+router.post("/users", (req, res) => {
+    const { name, email } = req.body;
+    const newUser = { name, email };
+    users.push(newUser);
+    res.json("User successfully added");
+    console.log(newUser);
+});
+router.get("/users", (req, res) => {
+    console.log(users);
+    res.json(users);
 });
 exports.default = router;
