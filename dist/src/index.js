@@ -33,4 +33,8 @@ router.post("/sum", (req, res) => {
         console.log(`Error parsin JSON: ${error}`);
     }
 });
+router.post("/users", (req, res) => {
+    console.log(req.body);
+    res.json({ "res": "gotted" });
+});
 exports.default = router;

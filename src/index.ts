@@ -1,4 +1,6 @@
 import {Router, Request, Response} from "express"
+import path from "path"
+
 
 const router: Router = Router()
 
@@ -32,5 +34,10 @@ router.post("/sum", (req: Request, res: Response) => {
     } catch (error: any) {
         console.log(`Error parsin JSON: ${error}`)
     }
+})
+
+router.post("/users", (req: Request, res: Response) => {
+    console.log(req.body)
+    res.json({"res":"gotted"})
 })
 export default router
