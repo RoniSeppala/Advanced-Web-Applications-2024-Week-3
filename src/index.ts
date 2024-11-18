@@ -49,7 +49,6 @@ router.post("/users", (req: Request, res: Response) => {
     const newUser: TUser = {name, email};
     users.push(newUser)
     res.status(201).json("User successfully added")
-    console.log(newUser)
 })
 
 router.get("/users", (req: Request, res: Response) => {

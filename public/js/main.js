@@ -4,13 +4,11 @@ const userList = document.getElementById("users")
 
 buttonSubmit.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log("button pressed")
     const data = {
         "name": document.getElementById("name").value,
         "email": document.getElementById("email").value
     }
 
-    console.log(data)
 
     fetch("http://localhost:3000/users", {
         method: "post",
@@ -27,7 +25,6 @@ buttonUsers.addEventListener("click", (event) => {
     userList.innerHTML = ""
     let data;
     fetch("http://localhost:3000/users").then((response) => response.json()).then((data) => {
-        console.log(data)
         for (let index = 0; index < data.length; index++) {
             const {name, email} = data[index];
             console.log({name, email})
