@@ -3,6 +3,7 @@ const buttonUsers = document.getElementById("getUsers")
 const userList = document.getElementById("users")
 
 buttonSubmit.addEventListener("click", (event) => {
+    event.preventDefault();
     console.log("button pressed")
     const data = {
         "name": document.getElementById("name").value,
