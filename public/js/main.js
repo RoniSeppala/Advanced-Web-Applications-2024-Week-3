@@ -29,7 +29,7 @@ buttonUsers.addEventListener("click", (event) => {
             const {name, email} = data[index];
             console.log({name, email})
             const li = document.createElement("li")
-            li.textContent = `Name: ${name}, Email: ${email}`
+            li.textContent = `Name: ${name} - Email: ${email}`
             userList.append(li)
         }
     })
