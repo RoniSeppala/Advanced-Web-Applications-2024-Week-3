@@ -1,5 +1,5 @@
 const buttonSubmit = document.getElementById("submitUser")
-const buttonUsers = document.getElementById("getUser")
+const buttonUsers = document.getElementById("getUsers")
 const userList = document.getElementById("userList")
 const userForm = document.getElementById("userForm")
 
