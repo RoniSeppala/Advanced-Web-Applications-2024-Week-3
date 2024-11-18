@@ -42,6 +42,6 @@ router.post("/users", (req, res) => {
 });
 router.get("/users", (req, res) => {
     console.log(users);
-    res.status(201).json(users);
+    res.status(201).json({ "users": users });
 });
 exports.default = router;

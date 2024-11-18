@@ -53,7 +53,7 @@ router.post("/users", (req: Request, res: Response) => {
 
 router.get("/users", (req: Request, res: Response) => {
     console.log(users)
-    res.status(201).json(users)
+    res.status(201).json({"users": users})
 })
 
 export default router
